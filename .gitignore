@@ -1,0 +1,6 @@
+asset/audio
+asset/images
+application/models/db/vocabulary
+bower_components
+application/models/db
+application/third_party/tmp
