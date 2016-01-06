@@ -46,17 +46,15 @@ class Get_pro extends CI_Controller {
 				$data = [
 				"tuvung_name" => $value,
 				"tuvung_prononciation" => $string1,
+				"tuvung_mean" => $string2,
 				];
 				$this->Tuvung->insert_vocabulary($data);
-				
-				file_put_contents(PATH_DB.$value.".txt", $string1."||||||||".$string2);
-				echo $string1."<hr>";
-				error_log($value);
 				$dom->clear();
 			} catch (Exception $e) {
 				
 			}
 		}
+		redirect('/get_pro','refresh');
 
 	}
 }

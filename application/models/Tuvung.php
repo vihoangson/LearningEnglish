@@ -68,7 +68,9 @@ class Tuvung extends CI_Model {
 
 	public function insert_vocabulary($data){
 		if(!$data["tuvung_name"]) return false;
-		$this->db->insert('tuvung', $data);
+		if($this->db->where('tuvung_name', $data["tuvung_name"])->get('tuvung')->num_rows()==0){
+			$this->db->insert('tuvung', $data);
+		}
 	}
 
 	public function insert_tuvung_form_array($array=[]){
